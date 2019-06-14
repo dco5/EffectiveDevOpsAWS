@@ -43,6 +43,9 @@ t = Template()
 
 ud = Base64(Join('\n', [
     "#!/bin/bash",
+    "yum update -y",
+    "yum install python27-devel libxslt-devel libffi-devel openssl-devel -y",
+    "pip install --upgrade setuptools",
     "yum install --enablerepo=epel -y git",
     "pip install ansible",
     AnsiblePullCmd,
